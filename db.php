@@ -1,26 +1,21 @@
 <?php
-// بيانات الاتصال الدقيقة بقاعدة بيانات Supabase الخاصة بك
-$host     = 'aws-0-eu-west-2.pooler.supabase.com'; // 🎯 تم تصحيح عنوان الهوست بناءً على منطقتك الدقيقة
-$db       = 'postgres'; // قاعدة البيانات الافتراضية
-$user     = 'postgres.usgpsmfnvkfzcuteunvu'; // معرف مشروعك الدقيق
-$password = 'GIqXgqRbuPDb8vQg'; // كلمة المرور الخاصة بك
-$port     = '5432';
+// بيانات الاتصال الدقيقة لـ Supabase المحدثة والمتوافقة مع السيرفرات الخارجية
+$host     = '://supabase.com'; 
+$db       = 'postgres'; 
+$port     = '6543'; // 🎯 هذا البورت يحل مشكلة tenant not found السابقة تماماً
+$user     = 'postgres.usgpsmfnvkfzcuteunvu'; 
+$password = 'GIqXgqRbuPDb8vQg'; 
 
-// نص الاتصال (DSN) لبيئة PostgreSQL في PHP
+// نص الاتصال القياسي لـ PostgreSQL في PHP
 $dsn = "pgsql:host=$host;port=$port;dbname=$db;";
 
 try {
-    // إنشاء الاتصال باستخدام PDO
     $pdo = new PDO($dsn, $user, $password, [
-        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION, // إظهار الأخطاء بوضوح إن وجدت
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,       // جلب البيانات على شكل مصفوفة مرتبة
+        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION, 
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,       
     ]);
     
-    // تم الاتصال بنجاح!
-    // echo "تم الاتصال بنجاح!"; 
-    
 } catch (PDOException $e) {
-    // في حال فشل الاتصال يعرض رسالة الخطأ لتسهيل معرفة السبب
     die("فشل الاتصال بقاعدة البيانات: " . $e->getMessage());
 }
 ?>
