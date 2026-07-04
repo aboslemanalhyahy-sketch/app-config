@@ -1,6 +1,6 @@
 <?php
 // 1. تضمين ملف الاتصال بقاعدة بيانات Supabase
-include 'db.php'; 
+//include 'db.php'; 
 ?>
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
