@@ -1,0 +1,211 @@
+/* 1. تعريف الخط المحلي واستدعائه للمتجر */
+@font-face {
+    font-family: 'Tajawal';
+    src: url('font-2025.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 2. الإعدادات العامة للمتجر */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tajawal', sans-serif; /* سيعمل الآن بنجاح لقراءة الملف المحلي */
+}
+
+body {
+    background-color: #f4f6f7; /* خلفية رمادية ناعمة لتبرز كروت المنتجات */
+    color: #333;
+    line-height: 1.6;
+}
+
+
+/* 2. الهيدر الخاص بالمتجر */
+.shop-header {
+    background-color: #2c3e50; /* لون كحلي فاخر ومناسب للمتاجر */
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.shop-logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: #f1c40f; /* لون أصفر ذهبي تجاري للـ Logo */
+}
+
+.shop-header nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.shop-header nav a:hover {
+    color: #f1c40f;
+}
+
+/* 3. حاوية الكروت الشبكية (The Grid) */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* توزيع المنتجات تلقائياً بجانب بعضها */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* 4. تصميم كارت المنتج الجذاب */
+.product-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    border: 1px solid #eef2f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* تأثير ارتفاع ناعم يجذب الزبون */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.product-img-wrapper {
+    width: 100%;
+    height: 250px;
+    background-color: #f7f9fa; /* خلفية استوديو ناعمة تملأ الفراغات الجانبية */
+    border-bottom: 1px solid #eef2f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* مسافة أمان صغيرة حول الصورة لمنع التصاقها بالحواف */
+}
+
+.product-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* إظهار الصورة كاملة 100% بدون أي قص أو إخفاء للأجزاء */
+    width: auto;
+    height: auto;
+}
+
+
+.product-info {
+    padding: 20px;
+    text-align: right;
+    flex-grow: 1;
+}
+
+.product-title {
+    font-size: 18px;
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.product-desc {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.product-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #fafbfc;
+    border-top: 1px solid #f5f5f5;
+}
+
+.product-price {
+    font-size: 18px;
+    color: #27ae60; /* اللون الأخضر التجاري المخصص للسعر */
+    font-weight: 700;
+}
+
+/* 5. زر الشراء عبر الواتساب الذكي */
+.buy-whatsapp-btn {
+    display: inline-block;
+    background-color: #25d366;
+    color: white;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.buy-whatsapp-btn:hover {
+    background-color: #20ba56;
+    transform: scale(1.05);
+}
+
+/* 6. استايلات لوحة التحكم الموحدة */
+.store-container {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #eef2f3;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #34495e;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.shop-btn {
+    width: 100%;
+    padding: 12px;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.shop-btn:hover {
+    background: #34495e;
+}
+
+/* 7. التوافق المخصص مع الموبايل (Responsive Mobile Layout) */
+@media (max-width: 768px) {
+    .shop-header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+    .shop-header nav a {
+        margin: 0 10px;
+    }
+    .products-grid {
+        grid-template-columns: 1fr; /* عرض منتج واحد كامل في الصف على شاشة الموبايل لبساطة التصفح */
+        gap: 20px;
+        padding: 0 15px;
+    }
+}
