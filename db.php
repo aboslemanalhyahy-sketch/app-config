@@ -1,8 +1,9 @@
+
 <?php
 // بيانات الاتصال الدقيقة لـ Supabase المحدثة والمتوافقة مع السيرفرات الخارجية
 $host     = '://supabase.com'; 
 $db       = 'postgres'; 
-$port     = '6543'; // 🎯 هذا البورت يحل مشكلة tenant not found السابقة تماماً
+$port     = '6543'; 
 $user     = 'postgres.usgpsmfnvkfzcuteunvu'; 
 $password = 'GIqXgqRbuPDb8vQg'; 
 
@@ -19,5 +20,6 @@ try {
     die("فشل الاتصال بقاعدة البيانات: " . $e->getMessage());
 }
 ?>
+
 
 
