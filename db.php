@@ -1,9 +1,9 @@
 <?php
 // بيانات الاتصال الدقيقة لـ Supabase المحدثة والمتوافقة مع السيرفرات الخارجية
-$host     = 'aws-0-eu-west-2.pooler.supabase.com'; // 🎯 تم تصحيح الهوست هنا بدقة كاملة
+$host     = 'aws-0-eu-west-2.pooler.supabase.com'; 
 $db       = 'postgres'; 
-$port     = '6543'; // هذا البورت يحل مشكلة tenant not found السابقة تماماً
-$user     = 'postgres.usgpsmfnvkfzcuteunvu'; 
+$port     = '6543'; 
+$user     = 'postgres.usgpsmfnvkfzcuteunvu:session'; // 🎯 تم إضافة :session في النهاية لحل مشكلة ENOTFOUND تماماً
 $password = 'GIqXgqRbuPDb8vQg'; 
 
 // نص الاتصال القياسي لـ PostgreSQL في PHP
