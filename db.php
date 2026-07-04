@@ -1,9 +1,9 @@
 <?php
 // بيانات الاتصال الدقيقة بقاعدة بيانات Supabase الخاصة بك
-$host     = '://supabase.com'; // تم تحديث النطاق بناءً على منطقتك (eu-west-2)
+$host     = 'aws-0-eu-west-2.pooler.supabase.com'; // 🎯 تم تصحيح عنوان الهوست بناءً على منطقتك الدقيقة
 $db       = 'postgres'; // قاعدة البيانات الافتراضية
-$user     = 'postgres.usgpsmfnvkfzcuteunvu'; // تم دمج اسم المستخدم مع معرف مشروعك الدقيق
-$password = 'GIqXgqRbuPDb8vQg'; // ⚠️ ضع هنا كلمة المرور الخاصة بقاعدة بيانات Supabase التي اخترتها عند الإنشاء
+$user     = 'postgres.usgpsmfnvkfzcuteunvu'; // معرف مشروعك الدقيق
+$password = 'GIqXgqRbuPDb8vQg'; // كلمة المرور الخاصة بك
 $port     = '5432';
 
 // نص الاتصال (DSN) لبيئة PostgreSQL في PHP
@@ -24,4 +24,5 @@ try {
     die("فشل الاتصال بقاعدة البيانات: " . $e->getMessage());
 }
 ?>
+
 
