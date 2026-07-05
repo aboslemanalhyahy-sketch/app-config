@@ -1,15 +1,16 @@
 <?php
-// بيانات الاتصال الدقيقة لـ Supabase المحدثة والمتوافقة مع السيرفرات الخارجية
-$host     = 'aws-0-eu-west-2.pooler.supabase.com'; 
+// 🎯 الاتصال المباشر والقاطع بقاعدة بيانات Supabase (بدون الـ Pooler المشاكس)
+$host     = 'db.usgpsmfnvkfzcuteunvu.supabase.co'; // الهوست المباشر والمخصص لمشروعك
 $db       = 'postgres'; 
-$port     = '6543'; 
-$user     = 'postgres.usgpsmfnvkfzcuteunvu:session'; // 🎯 تم إضافة :session في النهاية لحل مشكلة ENOTFOUND تماماً
-$password = 'GIqXgqRbuPDb8vQg'; 
+$port     = '5432'; // المنفذ القياسي للاتصال المباشر بـ PostgreSQL
+$user     = 'postgres'; // اسم المستخدم الافتراضي والنظيف (بدون نقط أو زيادات)
+$password = 'GIqXgqRbuPDb8vQg'; // كلمة المرور الخاصة بك
 
-// نص الاتصال القياسي لـ PostgreSQL في PHP
+// نص الاتصال (DSN)
 $dsn = "pgsql:host=$host;port=$port;dbname=$db;";
 
 try {
+    // إنشاء الاتصال
     $pdo = new PDO($dsn, $user, $password, [
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION, 
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,       
