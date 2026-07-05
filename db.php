@@ -1,22 +1,20 @@
 <?php
-// 🎯 الاتصال المباشر والقاطع بقاعدة بيانات Supabase (بدون الـ Pooler المشاكس)
-$host     = 'db.usgpsmfnvkfzcuteunvu.supabase.co'; // الهوست المباشر والمخصص لمشروعك
-$db       = 'postgres'; 
-$port     = '5432'; // المنفذ القياسي للاتصال المباشر بـ PostgreSQL
-$user     = 'postgres'; // اسم المستخدم الافتراضي والنظيف (بدون نقط أو زيادات)
-$password = 'GIqXgqRbuPDb8vQg'; // كلمة المرور الخاصة بك
-
-// نص الاتصال (DSN)
-$dsn = "pgsql:host=$host;port=$port;dbname=$db;";
+// 🎯 بيانات الاتصال المباشرة والآمنة بقاعدة بيانات Render الداخلية الجديدة
+$host     = '://render.com'; // العنوان الخارجي المباشر
+$db       = 'ghranij_db'; // اسم قاعدة البيانات الجديدة
+$port     = '5432'; // المنفذ الافتراضي
+$user     = 'ghranij_db_user'; // اسم المستخدم المولد تلقائياً
+$password = 'fI2g7RymWqE5u6Xz9A4b3C8vPdL1KsJ7'; // ⚠️ تنبيه: قم بنسخ الباسورد الحقيقي المخفي خلف النقاط في شاشتك وضعه هنا
+$dsn      = "pgsql:host=$host;port=$port;dbname=$db;";
 
 try {
-    // إنشاء الاتصال
+    // إنشاء الاتصال المستقر
     $pdo = new PDO($dsn, $user, $password, [
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION, 
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,       
     ]);
-    
 } catch (PDOException $e) {
-    die("فشل الاتصال بقاعدة البيانات: " . $e->getMessage());
+    die("فشل الاتصال بقاعدة البيانات الداخلية: " . $e->getMessage());
 }
 ?>
+
