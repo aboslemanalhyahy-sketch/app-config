@@ -4,7 +4,7 @@ $host     = '://render.com'; // العنوان الخارجي المباشر
 $db       = 'ghranij_db'; // اسم قاعدة البيانات الجديدة
 $port     = '5432'; // المنفذ الافتراضي
 $user     = 'ghranij_db_user'; // اسم المستخدم المولد تلقائياً
-$password = 'fI2g7RymWqE5u6Xz9A4b3C8vPdL1KsJ7'; // ⚠️ تنبيه: قم بنسخ الباسورد الحقيقي المخفي خلف النقاط في شاشتك وضعه هنا
+$password = '0HAQSJ9ciwr6ZuAi7QuujmtH8JO4AhXx'; // ⚠️ تنبيه: قم بنسخ الباسورد الحقيقي المخفي خلف النقاط في شاشتك وضعه هنا
 $dsn      = "pgsql:host=$host;port=$port;dbname=$db;";
 
 try {
